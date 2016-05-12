@@ -46,25 +46,26 @@
                 <form class="form" id="form1" runat="server">
                     <div class="form-group">
                         <asp:Label ID="FirstNameLabel" Text="First Name" runat="server" />
-                        <asp:TextBox CssClass="form-control" ID="FirstNameTextBox" runat="server" required="true" />
+                        <asp:TextBox CssClass="form-control" ID="FirstNameTextBox" runat="server" required="true" CausesValidation="True" />
                     </div>
 
                     <div class="form-group">
                         <asp:Label ID="LastNameLabel" Text="Last Name" runat="server" />
-                        <asp:TextBox CssClass="form-control" ID="LastNameTextBox" runat="server" required="true"/>
+                        <asp:TextBox CssClass="form-control" ID="LastNameTextBox" runat="server" required="true" CausesValidation="True"/>
                     </div>
 
                     <div class="form-group">
                         <asp:Label ID="AgeLabel" Text="Age" runat="server" />
-                        <asp:TextBox CssClass="form-control" ID="AgeTextBox" runat="server" required="true"/>
+                        <asp:TextBox CssClass="form-control" ID="AgeTextBox" runat="server" required="true" CausesValidation="True"/>
+                        <asp:RangeValidator CssClass="alert alert-danger form-control" ID="AgeRangeValidator" runat="server" ErrorMessage="Please enter a valid age between 1-130" MaximumValue="130" MinimumValue="1" Type="Integer" ControlToValidate="AgeTextBox"></asp:RangeValidator>
                     </div>
-
+                    
                     <asp:Button CssClass="btn btn-primary" ID="SubmitButton" Text="Submit" runat="server" OnClick="SubmitButton_Click" />
                     <br />
                     <hr />
                     <div class="form-group">
                         <asp:Label Text="FullName" ID="FullNameLabel" runat="server" />
-                        <asp:TextBox ID="FullNameTextBox" runat="server" />
+                        <asp:TextBox CssClass="form-control" ID="FullNameTextBox" runat="server" />
                     </div>
                 </form>
             </div>
